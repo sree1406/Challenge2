@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: wp-vs-route
+spec:
+  hosts:
+  - wp-host5.wp-test5.tk
+  - 139.59.53.21
+  gateways:
+  - wp-gateway
+  http:
+  - route:
+    - destination:
+        host: wordpress.istio-system.svc.cluster.local
+        port:
+          number: 80
