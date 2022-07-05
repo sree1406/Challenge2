@@ -7,8 +7,9 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
   node_pool {
     name = "${var.name}-node-pool"
     size = var.size
-    auto_scale = true
-    min_nodes  = 1
-    max_nodes  = 3
+    #auto_scale = true
+    #min_nodes  = 1
+    #max_nodes  = 3
+    node_count = 2
   }
 }
